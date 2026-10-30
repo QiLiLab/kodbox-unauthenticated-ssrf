@@ -11,7 +11,12 @@ These steps summarize the **supplied report's** reproduction. Run them only agai
    ```
 
 2. Complete the installer in your local browser. Create a passwordless, non-expired public share for a test file and copy its share ID. Do not use a production share or include the ID in a public artifact.
-3. Inside the container, start a test HTTP service on `127.0.0.1:9999`. Keep port 9999 unmapped to the host. Return the harmless body `INTERNAL-ONLY-DATA`.
+3. Inside the container, create a harmless test response and start an HTTP service bound to `127.0.0.1:9999`. Port 9999 remains unmapped to the host:
+
+   ```console
+   docker exec kodbox-ssrf-lab sh -c 'mkdir -p /tmp/ssrf-lab && printf INTERNAL-ONLY-DATA > /tmp/ssrf-lab/x'
+   docker exec -d kodbox-ssrf-lab sh -c 'cd /tmp/ssrf-lab && python3 -m http.server 9999 --bind 127.0.0.1'
+   ```
 
 ## Test request
 
