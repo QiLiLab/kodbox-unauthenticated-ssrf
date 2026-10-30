@@ -2,7 +2,7 @@
 
 [简体中文](README.zh-CN.md) · [Local reproduction](POC.md)
 
-This private repository records a reported server-side request forgery (SSRF) in the kodbox public-share interface. A valid, accessible public share link is required, but the request does not require an account. The supplied report documents a local reproduction on `kodcloud/kodbox:1.68.10`; the relevant URL-accepting branch is also present in the upstream `1.70.03` release source. Runtime behavior on `1.70.03` has not been independently reproduced here.
+This repository records a reported server-side request forgery (SSRF) in the kodbox public-share interface. A valid, accessible public share link is required, but the request does not require an account. The supplied report documents a local reproduction on `kodcloud/kodbox:1.68.10`; the relevant URL-accepting branch is also present in the upstream `1.70.03` release source. Runtime behavior on `1.70.03` has not been independently reproduced here.
 
 ## Summary
 
@@ -71,4 +71,4 @@ The share must be public and accessible. The finding is therefore unauthenticate
 
 ## Disclosure status
 
-This repository is private and contains a sanitized technical record. Creating it does not notify the kodbox maintainers or submit a private vulnerability report to their repository.
+This repository is public and contains a sanitized technical record. Publishing it does not notify the kodbox maintainers or submit a private vulnerability report to their repository.
